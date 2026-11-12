@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- lang="pt-BR" informa o idioma da página (leitores de tela e tradutores usam isso) -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agro Luxo Automóveis: SW4, RAM, Maybach e camionetes para o serviço e o uso próprio na fazenda, com fotos reais de cada veículo.">
+  <title>Agro Luxo Automóveis | Veículos para a fazenda</title>
+
+  <!-- Google Fonts: Barlow Condensed (títulos) e Source Sans 3 (textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Arquivo de estilos externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="topo">
+
+  <!-- Link de acessibilidade: só aparece quando o teclado (Tab) chega nele -->
+  <a class="pular-conteudo" href="#conteudo">Ir para o conteúdo</a>
+
+  <!-- ================= CABEÇALHO ================= -->
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a class="logo" href="#topo">Agro Luxo <span>Automóveis</span></a>
+
+      <nav class="menu" aria-label="Menu principal">
+        <ul>
+          <li><a href="#veiculos">Veículos</a></li>
+          <li><a href="#marcas">Marcas</a></li>
+          <li><a href="#como-comprar">Como comprar</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <a class="botao botao-contorno" href="#contato">Falar com um vendedor</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grade">
+
+        <div class="hero-texto">
+          <h1>Picapes e SUVs de luxo para o trabalho e o dia a dia na fazenda.</h1>
+          <p class="hero-descricao">SW4, RAM, Maybach e outras camionetes selecionadas, para o serviço pesado ou para uso próprio. Cada veículo tem fotos reais e histórico conferido.</p>
+
+          <!-- Formulário de busca rápida -->
+          <form class="busca" action="#veiculos" method="get">
+            <div class="campo">
+              <label for="marca">Marca</label>
+              <select id="marca" name="marca">
+                <option value="">Todas</option>
+                <option>Toyota SW4</option>
+                <option>RAM</option>
+                <option>Maybach</option>
+                <option>Outras camionetes</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="tipo">Tipo</label>
+              <select id="tipo" name="tipo">
+                <option value="">Todos</option>
+                <option>SUV</option>
+                <option>Picape</option>
+                <option>Sedã de luxo</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="uso">Uso</label>
+              <select id="uso" name="uso">
+                <option value="">Qualquer</option>
+                <option>Serviço na fazenda</option>
+                <option>Uso próprio</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="preco">Preço máximo</label>
+              <select id="preco" name="preco">
+                <option value="">Sem limite</option>
+                <option>R$ 200 mil</option>
+                <option>R$ 400 mil</option>
+                <option>R$ 800 mil</option>
+              </select>
+            </div>
+            <button class="botao" type="submit">Ver veículos</button>
+          </form>
+
+          <ul class="garantias">
+            <li>Fotos reais de cada veículo</li>
+            <li>Laudo cautelar incluso</li>
+            <li>Financiamento em até 60 vezes</li>
+          </ul>
+        </div>
+
+        <!-- Imagem principal: coloque a foto em img/hero-sw4.jpg -->
+        <figure class="hero-imagem">
+          <img src="img/hero-sw4.jpg" alt="Toyota SW4 em uma estrada de terra de fazenda" width="1200" height="900">
+          <figcaption>Toyota SW4 SRX 2.8 Diesel, 2023</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- PARTE 2: seção de veículos em destaque (cards) entra aqui -->
+    <!-- PARTE 3: marcas e como comprar entram aqui -->
+
+  </main>
+
+  <!-- PARTE 3: rodapé (footer) entra aqui -->
+
+</body>
+</html>
