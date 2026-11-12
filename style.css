@@ -417,3 +417,30 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* FUNDO DA SEÇÃO SOBRE A EMPRESA */
+#essencia {
+    background:
+        linear-gradient(
+            rgba(20, 23, 26, 0.78),
+            rgba(20, 23, 26, 0.85)
+        ),
+        url("img/fazenda.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 90px 40px;
+    color: #f2efe9;
+    border-radius: 12px;
+    margin: 40px auto;
+}
+
+#essencia h2 {
+    color: #048b45c0;
+}
+
+#essencia p {
+    color: #f2efe9;
+}
