@@ -1,26 +1,20 @@
 <!DOCTYPE html>
-<!-- lang="pt-BR" informa o idioma da página (leitores de tela e tradutores usam isso) -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Agro Luxo Automóveis: SW4, RAM, Maybach e camionetes para o serviço e o uso próprio na fazenda, com fotos reais de cada veículo.">
+  <meta name="description" content="Agro Luxo Automóveis: picapes e SUVs para o trabalho e o dia a dia.">
   <title>Agro Luxo Automóveis | Veículos para a fazenda</title>
 
-  <!-- Google Fonts: Barlow Condensed (títulos) e Source Sans 3 (textos) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- Arquivo de estilos externo -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body id="topo">
 
-  <!-- Link de acessibilidade: só aparece quando o teclado (Tab) chega nele -->
+<body id="topo">
   <a class="pular-conteudo" href="#conteudo">Ir para o conteúdo</a>
 
-  <!-- ================= CABEÇALHO ================= -->
   <header class="cabecalho">
     <div class="container cabecalho-conteudo">
       <a class="logo" href="#topo">Agro Luxo <span>Automóveis</span></a>
@@ -28,8 +22,7 @@
       <nav class="menu" aria-label="Menu principal">
         <ul>
           <li><a href="#veiculos">Veículos</a></li>
-          <li><a href="#marcas">Marcas</a></li>
-          <li><a href="#como-comprar">Como comprar</a></li>
+          <li><a href="#essencia">Nossa essência</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
@@ -39,121 +32,138 @@
   </header>
 
   <main id="conteudo">
+    <section class="essencia" id="essencia">
+      <span class="subtitulo">AGRO LUXO AUTOMÓVEIS</span>
+      <h1>Mais que veículos, uma experiência de confiança.</h1>
+      <p>
+        A Agro Luxo nasceu para conectar pessoas a veículos que representam
+        força, qualidade e sofisticação. Acreditamos que cada conquista
+        merece um veículo à altura. Por isso, trabalhamos com picapes e SUVs
+        selecionados, oferecendo uma experiência de compra marcada pela
+        transparência, segurança e excelência.
+      </p>
+      <p>
+        Seja para enfrentar os desafios do campo ou aproveitar o conforto
+        da cidade, temos o veículo ideal para acompanhar sua jornada.
+      </p>
+    </section>
 
-    <!-- ================= HERO ================= -->
-    
-<section id="veiculos" class="secao-veiculos">
-    <div class="titulo-secao">
+    <section id="veiculos" class="secao-veiculos">
+      <div class="titulo-secao">
+        <span class="subtitulo">NOSSO CATÁLOGO</span>
         <h2>Nossos Veículos</h2>
         <p>Encontre o veículo ideal para você.</p>
-    </div>
+      </div>
 
-    <div class="veiculos-grid">
+      <!-- Todos os anúncios ficam dentro desta única grade. -->
+      <div class="veiculos-grid">
+        <article class="veiculo-card">
+          <img src="img/ford-shelby.jpg" alt="Ford Shelby" loading="lazy">
+          <div class="veiculo-info">
+            <h3>Ford Shelby</h3>
+            <p>Potência, desempenho e sofisticação.</p>
+            <a href="#contato" class="btn-veiculo">Consultar veículo</a>
+          </div>
+        </article>
 
-        <div class="veiculo-card">
-            <img src="img/ford-shelby.jpg" alt="Ford Shelby">
-            <div class="veiculo-info">
-                <h3>Ford Shelby</h3>
-                <p>Potência, desempenho e sofisticação.</p>
-                <a href="#contato" class="btn-veiculo">Consultar veículo</a>
-            </div>
-        </div>
+        <article class="veiculo-card">
+          <img src="img/FordMaverick.jpg" alt="Ford Maverick" loading="lazy">
+          <div class="veiculo-info">
+            <h3>Ford Maverick</h3>
+            <p>Versatilidade para o trabalho e o dia a dia.</p>
+            <a href="#contato" class="btn-veiculo">Consultar veículo</a>
+          </div>
+        </article>
 
-        <div class="veiculo-card">
-            <img src="img/FordMaverick.jpg" alt="Ford Maverick">
-            <div class="veiculo-info">
-                <h3>Ford Maverick</h3>
-                <p>Versatilidade para o trabalho e o dia a dia.</p>
-                <a href="#contato" class="btn-veiculo">Consultar veículo</a>
-            </div>
-        </div>
+        <article class="veiculo-card">
+          <img src="img/maybach.jpg" alt="Mercedes-Maybach" loading="lazy">
+          <div class="veiculo-info">
+            <h3>Mercedes-Maybach</h3>
+            <p>Luxo, conforto e exclusividade.</p>
+            <a href="#contato" class="btn-veiculo">Consultar veículo</a>
+          </div>
+        </article>
 
-        <div class="veiculo-card">
-            <img src="img/maybach.jpg" alt="Mercedes Maybach">
-            <div class="veiculo-info">
-                <h3>Mercedes-Maybach</h3>
-                <p>Luxo, conforto e exclusividade.</p>
-                <a href="#contato" class="btn-veiculo">Consultar veículo</a>
-            </div>
-        </div>
+        <article class="veiculo-card">
+          <img src="img/ram(azul).jpg" alt="Picape RAM azul" loading="lazy">
+          <div class="veiculo-info">
+            <h3>RAM</h3>
+            <p>Força e robustez para qualquer desafio.</p>
+            <a href="#contato" class="btn-veiculo">Consultar veículo</a>
+          </div>
+        </article>
 
-        <div class="veiculo-card">
-            <img src="img/ram.jpg" alt="RAM">
-            <div class="veiculo-info">
-                <h3>RAM</h3>
-                <p>Força e robustez para qualquer desafio.</p>
-                <a href="#contato" class="btn-veiculo">Consultar veículo</a>
-            </div>
-        </div>
+        <article class="veiculo-card">
+          <img src="img/ram(2).jpg" alt="Picape RAM modelo 2" loading="lazy">
+          <div class="veiculo-info">
+            <h3>RAM — Modelo 2</h3>
+            <p>Potência e presença em qualquer terreno.</p>
+            <a href="#contato" class="btn-veiculo">Consultar veículo</a>
+          </div>
+        </article>
 
-        <div class="veiculo-card">
-            <img src="img/ram(2).jpg" alt="RAM modelo 2">
-            <div class="veiculo-info">
-                <h3>RAM — Modelo 2</h3>
-                <p>Potência e presença em qualquer terreno.</p>
-                <a href="#contato" class="btn-veiculo">Consultar veículo</a>
-            </div>
-        </div>
+        <article class="veiculo-card">
+          <img src="img/saveiro.jpg" alt="Volkswagen Saveiro" loading="lazy">
+          <div class="veiculo-info">
+            <h3>Volkswagen Saveiro</h3>
+            <p>Praticidade e economia para o trabalho.</p>
+            <a href="#contato" class="btn-veiculo">Consultar veículo</a>
+          </div>
+        </article>
 
-        <div class="veiculo-card">
-            <img src="img/saveiro.jpg" alt="Volkswagen Saveiro">
-            <div class="veiculo-info">
-                <h3>Volkswagen Saveiro</h3>
-                <p>Praticidade e economia para o trabalho.</p>
-                <a href="#contato" class="btn-veiculo">Consultar veículo</a>
-            </div>
-        </div>
+        <article class="veiculo-card">
+          <img src="img/sw4.jpg" alt="Toyota SW4" loading="lazy">
+          <div class="veiculo-info">
+            <h3>Toyota SW4</h3>
+            <p>Conforto, espaço e resistência.</p>
+            <a href="#contato" class="btn-veiculo">Consultar veículo</a>
+          </div>
+        </article>
 
-        <div class="veiculo-card">
-            <img src="img/sw4.jpg" alt="Toyota SW4">
-            <div class="veiculo-info">
-                <h3>Toyota SW4</h3>
-                <p>Conforto, espaço e resistência.</p>
-                <a href="#contato" class="btn-veiculo">Consultar veículo</a>
-            </div>
-        </div>
+        <article class="veiculo-card">
+          <img src="img/silverado.jpg" alt="Chevrolet Silverado High Country" loading="lazy">
+          <div class="veiculo-info">
+            <h3>Chevrolet Silverado High Country</h3>
+            <p>Potência, tecnologia e sofisticação.</p>
+            <a href="#contato" class="btn-veiculo">Consultar veículo</a>
+          </div>
+        </article>
 
-    </div>
-</section>
-
+        <article class="veiculo-card">
+          <img src="img/land.jpg" alt="Land Rover Defender 110" loading="lazy">
+          <div class="veiculo-info">
+            <h3>Land Rover Defender 110</h3>
+            <p>Robustez, luxo e capacidade para qualquer terreno.</p>
+            <a href="#contato" class="btn-veiculo">Consultar veículo</a>
+          </div>
+        </article>
       </div>
     </section>
   </main>
 
-  <!-- PARTE 3: rodapé (footer) entra aqui -->
-
-<footer class="rodape" id="contato">
-
+  <footer class="rodape" id="contato">
     <div class="rodape-conteudo">
+      <div class="rodape-marca">
+        <h2>Agro <span>Luxo</span></h2>
+        <p>Veículos de alto padrão para quem busca força, conforto e sofisticação.</p>
+      </div>
 
-        <div class="rodape-marca">
-            <h2>Agro <span>Luxo</span></h2>
-            <p>
-                Veículos de alto padrão para quem busca
-                força, conforto e sofisticação.
-            </p>
-        </div>
+      <div class="rodape-informacoes">
+        <p>Atendimento em todo o Brasil</p>
+        <p>Segunda a sábado, das 8h às 18h</p>
+        <p>contato@agroluxo.com.br</p>
+      </div>
 
-        <div class="rodape-informacoes">
-            <p>Atendimento em todo o Brasil</p>
-            <p>Segunda a sábado, das 8h às 18h</p>
-            <p>contato@agroluxo.com.br</p>
-        </div>
-
-        <div class="rodape-links">
-            <a href="#veiculos">Veículos</a>
-            <a href="#marcas">Marcas</a>
-            <a href="#como-comprar">Como comprar</a>
-            <a href="#contato">Contato</a>
-        </div>
-
+      <div class="rodape-links">
+        <a href="#veiculos">Veículos</a>
+        <a href="#essencia">Nossa essência</a>
+        <a href="#topo">Voltar ao início</a>
+      </div>
     </div>
 
     <div class="rodape-final">
-        <p>© 2026 Agro Luxo Automóveis. Todos os direitos reservados.</p>
+      <p>© 2026 Agro Luxo Automóveis. Todos os direitos reservados.</p>
     </div>
-
-</footer>
-
+  </footer>
 </body>
 </html>

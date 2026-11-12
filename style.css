@@ -1,19 +1,15 @@
-/* =========================================================
-   Agro Luxo Automóveis: style.css
-   PARTE 1: variáveis, base, cabeçalho e hero
-   ========================================================= */
+/* =====================================================
+   AGRO LUXO AUTOMÓVEIS — style.css
+   ===================================================== */
 
-/* ============ VARIÁVEIS CSS ============
-   Declaradas em :root (valem para a página inteira) e usadas com var(--nome).
-   Para mudar a identidade do site, basta trocar os valores aqui. */
 :root {
   --cor-grafite: #14171a;
   --cor-aco: #1f2429;
   --cor-linha: #343b42;
   --cor-areia: #ece7dd;
   --cor-nevoa: #a3acb4;
-  --cor-cobre: #c07a3e;
-  --cor-cobre-escuro: #9a5f2c;
+  --cor-verde: #048b45c0;
+  --cor-verde-escuro: #61f07e;
   --cor-texto: #f2efe9;
 
   --fonte-titulo: 'Barlow Condensed', 'Arial Narrow', sans-serif;
@@ -23,9 +19,7 @@
   --tempo: 0.3s;
 }
 
-/* ============ RESET E BASE ============
-   Zera margens e paddings do navegador.
-   border-box faz width e height já contarem o padding e a borda. */
+/* RESET E BASE */
 * {
   margin: 0;
   padding: 0;
@@ -33,8 +27,7 @@
 }
 
 html {
-  font-size: 100%; /* 1rem = 16px, ou o tamanho que a pessoa escolheu no navegador */
-  scroll-behavior: smooth; /* rolagem suave ao clicar nos links do menu */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -45,19 +38,15 @@ body {
   line-height: 1.6;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: var(--fonte-titulo);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.1;
 }
 
 img {
   display: block;
   max-width: 100%;
-  height: auto;
-  background-color: var(--cor-aco); /* cor que aparece enquanto a foto não carrega */
 }
 
 ul {
@@ -69,13 +58,11 @@ a {
   text-decoration: none;
 }
 
-/* Contorno visível para quem navega com o teclado (Tab) */
 :focus-visible {
-  outline: 3px solid var(--cor-cobre);
+  outline: 3px solid var(--cor-verde);
   outline-offset: 3px;
 }
 
-/* Caixa central que limita a largura do conteúdo */
 .container {
   width: 100%;
   max-width: 75rem;
@@ -83,7 +70,6 @@ a {
   padding: 0 1.5rem;
 }
 
-/* Link "Ir para o conteúdo": fica acima da tela e desce ao receber foco */
 .pular-conteudo {
   position: absolute;
   top: -4rem;
@@ -91,64 +77,24 @@ a {
   z-index: 20;
   padding: 0.625rem 1.125rem;
   border-radius: var(--raio);
-  background-color: var(--cor-texto);
+  background: var(--cor-texto);
   color: var(--cor-grafite);
   font-weight: 600;
-  transition: top var(--tempo) ease;
 }
 
 .pular-conteudo:focus {
   top: 0.75rem;
 }
 
-/* ============ BOTÕES ============
-   .botao é o padrão (cobre). Variações: .botao-contorno e .botao-escuro.
-   A transition vai no estado normal, assim vale na ida e na volta do hover. */
-.botao {
-  display: inline-block;
-  padding: 0.8125rem 1.5rem;
-  border: 2px solid var(--cor-cobre);
-  border-radius: var(--raio);
-  background-color: var(--cor-cobre);
-  color: var(--cor-grafite);
-  font-family: var(--fonte-texto);
-  font-size: 1rem;
-  font-weight: 600;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color var(--tempo) ease, color var(--tempo) ease, transform var(--tempo) ease;
-}
-
-.botao:hover {
-  background-color: var(--cor-texto);
-  border-color: var(--cor-texto);
-  transform: translateY(-2px);
-}
-
-.botao-contorno {
-  background-color: transparent;
-  color: var(--cor-texto);
-  padding: 0.5625rem 1.125rem;
-  font-size: 0.9375rem;
-}
-
-.botao-contorno:hover {
-  background-color: var(--cor-cobre);
-  border-color: var(--cor-cobre);
-  color: var(--cor-grafite);
-}
-
-/* ============ CABEÇALHO ============
-   sticky mantém o cabeçalho grudado no topo ao rolar a página. */
+/* CABEÇALHO */
 .cabecalho {
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: rgba(20, 23, 26, 0.94);
+  background: rgba(20, 23, 26, 0.96);
   border-bottom: 1px solid var(--cor-linha);
 }
 
-/* Flexbox: logo à esquerda, menu no meio e botão à direita */
 .cabecalho-conteudo {
   display: flex;
   align-items: center;
@@ -166,308 +112,308 @@ a {
   line-height: 1;
 }
 
-.logo span {
-  color: var(--cor-cobre);
+.logo span,
+.rodape-marca h2 span {
+  color: var(--cor-verde);
 }
 
 .menu ul {
   display: flex;
-  gap: 1.75rem;
+  flex-wrap: wrap;
+  gap: 1.25rem;
 }
 
 .menu a {
   padding-bottom: 0.25rem;
   border-bottom: 2px solid transparent;
   font-size: 0.9375rem;
-  transition: color var(--tempo) ease, border-color var(--tempo) ease;
+  transition: color var(--tempo), border-color var(--tempo);
 }
 
 .menu a:hover {
-  color: var(--cor-cobre);
-  border-bottom-color: var(--cor-cobre);
+  color: var(--cor-verde);
+  border-bottom-color: var(--cor-verde);
 }
 
-/* ============ HERO ============
-   Grid de 2 colunas: texto (um pouco maior) e foto. */
-.hero {
-  padding: 4rem 0 5rem;
-}
-
-.hero-grade {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  align-items: center;
-  gap: 3.5rem;
-}
-
-/* clamp(mínimo, ideal, máximo): o título cresce com a janela, mas dentro de um limite */
-.hero-texto h1 {
-  font-size: clamp(2.75rem, 5.5vw, 4.5rem);
-  letter-spacing: -0.5px;
-  margin-bottom: 1.25rem;
-}
-
-.hero-descricao {
-  max-width: 34rem;
-  color: var(--cor-nevoa);
-  font-size: 1.1875rem;
-}
-
-/* Busca rápida: 3 campos e o botão lado a lado */
-.busca {
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: var(--cor-aco);
-  border: 1px solid var(--cor-linha);
+.botao {
+  display: inline-block;
+  padding: 0.8125rem 1.5rem;
+  border: 2px solid var(--cor-verde);
   border-radius: var(--raio);
+  background: var(--cor-verde);
+  color: var(--cor-grafite);
+  font-weight: 600;
+  text-align: center;
+  transition: background-color var(--tempo), color var(--tempo), transform var(--tempo);
 }
 
-.campo {
-  flex: 1 1 8rem; /* cresce, encolhe e começa com 8rem de largura */
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+.botao:hover {
+  background: var(--cor-texto);
+  border-color: var(--cor-texto);
+  transform: translateY(-2px);
 }
 
-.campo label {
-  font-size: 0.8125rem;
-  color: var(--cor-nevoa);
-}
-
-.campo select {
-  width: 100%;
-  padding: 0.6875rem 0.75rem;
-  border: 1px solid var(--cor-linha);
-  border-radius: var(--raio);
-  background-color: var(--cor-grafite);
+.botao-contorno {
+  padding: 0.5625rem 1.125rem;
+  background: transparent;
   color: var(--cor-texto);
-  font-family: var(--fonte-texto);
-  font-size: 1rem;
-}
-
-/* Lista de garantias abaixo da busca */
-.garantias {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
-  margin-top: 1.5rem;
   font-size: 0.9375rem;
+}
+
+.botao-contorno:hover {
+  background: var(--cor-verde);
+  border-color: var(--cor-verde);
+  color: var(--cor-grafite);
+}
+
+/* APRESENTAÇÃO / ESSÊNCIA */
+.essencia {
+  padding: 5rem 12%;
+  background: var(--cor-grafite);
+  text-align: center;
+}
+
+.subtitulo {
+  color: var(--cor-verde);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.25rem;
+}
+
+.essencia h1 {
+  max-width: 750px;
+  margin: 1.25rem auto;
+  color: var(--cor-areia);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+.essencia p {
+  max-width: 850px;
+  margin: 1rem auto;
   color: var(--cor-nevoa);
+  font-size: 1.0625rem;
+  line-height: 1.8;
 }
 
-.garantias li {
-  padding-left: 1.25rem;
-  position: relative;
-}
-
-/* Marcador feito com CSS: pseudo-elemento ::before, sem precisar de imagem */
-.garantias li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.6em;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background-color: var(--cor-cobre);
-}
-
-/* Foto principal. aspect-ratio mantém a proporção; object-fit: cover preenche sem distorcer. */
-.hero-imagem {
-  position: relative;
-}
-
-.hero-imagem img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: var(--raio);
-  border: 1px solid var(--cor-linha);
-}
-
-.hero-imagem figcaption {
-  margin-top: 0.75rem;
-  font-size: 0.875rem;
-  color: var(--cor-nevoa);
-}
-
-/* ============ TELAS MENORES (básico; o ajuste completo vem na Parte 4) ============ */
-@media (max-width: 60em) {
-  .hero-grade {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* SEÇÃO DE VEÍCULOS */
 .secao-veiculos {
-    padding: 70px 8%;
-    background-color: #1f2429;
+  padding: 4.5rem 8%;
+  background: var(--cor-aco);
 }
 
 .titulo-secao {
-    text-align: center;
-    margin-bottom: 40px;
+  margin-bottom: 2.5rem;
+  text-align: center;
 }
 
 .titulo-secao h2 {
-    color: #ece7dd;
-    font-size: 36px;
-    margin-bottom: 10px;
+  margin: 0.5rem 0;
+  color: var(--cor-areia);
+  font-size: clamp(2rem, 4vw, 2.5rem);
 }
 
 .titulo-secao p {
-    color: #a3acb4;
+  color: var(--cor-nevoa);
 }
 
+/* Uma única grade para os nove anúncios */
 .veiculos-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 1.5rem;
 }
 
 .veiculo-card {
-    background-color: #14171a;
-    border: 1px solid #343b42;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: 0.3s;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--cor-linha);
+  border-radius: 12px;
+  background: var(--cor-grafite);
+  transition: transform var(--tempo), border-color var(--tempo);
 }
 
 .veiculo-card:hover {
-    transform: translateY(-5px);
-    border-color: #c07a3e;
+  transform: translateY(-5px);
+  border-color: var(--cor-verde);
 }
 
 .veiculo-card img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    display: block;
+  width: 100%;
+  height: 230px;
+  flex: 0 0 230px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.veiculo-card:hover img {
+  transform: scale(1.08);
 }
 
 .veiculo-info {
-    padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.25rem;
 }
 
 .veiculo-info h3 {
-    color: #ece7dd;
-    font-size: 22px;
-    margin-bottom: 10px;
+  min-height: 2.5em;
+  margin-bottom: 0.625rem;
+  color: var(--cor-areia);
+  font-size: 1.375rem;
 }
 
 .veiculo-info p {
-    color: #a3acb4;
-    margin-bottom: 20px;
+  flex: 1;
+  margin-bottom: 1.25rem;
+  color: var(--cor-nevoa);
 }
 
 .btn-veiculo {
-    display: inline-block;
-    background-color: #c07a3e;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 5px;
-    text-decoration: none;
+  display: inline-block;
+  margin-top: auto;
+  padding: 0.625rem 1.125rem;
+  border-radius: 5px;
+  background: var(--cor-verde);
+  color: white;
+  transition: background-color var(--tempo), transform var(--tempo);
 }
 
 .btn-veiculo:hover {
-    background-color: #9a5f2c;
+  background: var(--cor-verde-escuro);
+  transform: translateY(-2px);
 }
 
-@media (max-width: 900px) {
-    .veiculos-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .veiculos-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* RODAPÉ */
-
+/* RODAPÉ COM FOTO DE FUNDO */
 .rodape {
-    background-image:
-        linear-gradient(rgba(10, 12, 14, 0.65), rgba(10, 12, 14, 0.85)),
-        url("img/ram.jpg");
-
-    background-size: cover;
-    background-position: center;
-    color: #f2efe9;
+  color: var(--cor-texto);
+  background-image:
+    linear-gradient(rgba(10, 12, 14, 0.65), rgba(10, 12, 14, 0.85)),
+    url("img/ram(3).jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .rodape-conteudo {
-    min-height: 350px;
-    padding: 65px 8%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 200px;
-    align-items: start;
-    gap: 40px;
+  min-height: 350px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 200px;
+  align-items: start;
+  gap: 2.5rem;
+  padding: 4rem 8%;
 }
 
 .rodape-marca h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.rodape-marca h2 span {
-    color: #c07a3e;
+  margin-bottom: 1.25rem;
+  font-size: 2rem;
 }
 
 .rodape-marca p {
-    max-width: 350px;
-    line-height: 1.7;
-    color: #ece7dd;
+  max-width: 350px;
+  color: var(--cor-areia);
+  line-height: 1.7;
 }
 
 .rodape-informacoes {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-top: 0.625rem;
 }
 
-.rodape-informacoes p {
-    color: #ece7dd;
+.rodape-informacoes p,
+.rodape-links a {
+  color: var(--cor-areia);
 }
 
 .rodape-links {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .rodape-links a {
-    color: #ece7dd;
-    text-decoration: none;
-    transition: 0.3s;
+  transition: color var(--tempo);
 }
 
 .rodape-links a:hover {
-    color: #c07a3e;
+  color: var(--cor-verde);
 }
 
 .rodape-final {
-    border-top: 1px solid rgba(255,255,255,0.2);
-    padding: 25px;
-    text-align: center;
-    background-color: rgba(10, 12, 14, 0.85);
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(10, 12, 14, 0.85);
+  text-align: center;
 }
 
 .rodape-final p {
-    color: #ece7dd;
+  color: var(--cor-areia);
 }
 
 /* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .veiculos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-@media (max-width: 700px) {
-    .rodape-conteudo {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
+  .rodape-conteudo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rodape-links {
+    grid-column: 1 / -1;
+  }
 }
 
+@media (max-width: 600px) {
+  .cabecalho-conteudo {
+    justify-content: center;
+  }
+
+  .menu ul {
+    justify-content: center;
+    gap: 0.75rem 1rem;
+  }
+
+  .essencia {
+    padding: 3.5rem 7%;
+  }
+
+  .secao-veiculos {
+    padding: 3.5rem 6%;
+  }
+
+  .veiculos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .veiculo-card img {
+    height: 220px;
+    flex-basis: 220px;
+  }
+
+  .rodape-conteudo {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 3rem 8%;
+  }
+
+  .rodape-links {
+    grid-column: auto;
+  }
+}
+
+/* Respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
