@@ -41,76 +41,119 @@
   <main id="conteudo">
 
     <!-- ================= HERO ================= -->
-    <section class="hero" id="inicio">
-      <div class="container hero-grade">
+    
+<section id="veiculos" class="secao-veiculos">
+    <div class="titulo-secao">
+        <h2>Nossos Veículos</h2>
+        <p>Encontre o veículo ideal para você.</p>
+    </div>
 
-        <div class="hero-texto">
-          <h1>Picapes e SUVs de luxo para o trabalho e o dia a dia na fazenda.</h1>
-          <p class="hero-descricao">SW4, RAM, Maybach e outras camionetes selecionadas, para o serviço pesado ou para uso próprio. Cada veículo tem fotos reais e histórico conferido.</p>
+    <div class="veiculos-grid">
 
-          <!-- Formulário de busca rápida -->
-          <form class="busca" action="#veiculos" method="get">
-            <div class="campo">
-              <label for="marca">Marca</label>
-              <select id="marca" name="marca">
-                <option value="">Todas</option>
-                <option>Toyota SW4</option>
-                <option>RAM</option>
-                <option>Maybach</option>
-                <option>Outras camionetes</option>
-              </select>
+        <div class="veiculo-card">
+            <img src="img/ford-shelby.jpg" alt="Ford Shelby">
+            <div class="veiculo-info">
+                <h3>Ford Shelby</h3>
+                <p>Potência, desempenho e sofisticação.</p>
+                <a href="#contato" class="btn-veiculo">Consultar veículo</a>
             </div>
-            <div class="campo">
-              <label for="tipo">Tipo</label>
-              <select id="tipo" name="tipo">
-                <option value="">Todos</option>
-                <option>SUV</option>
-                <option>Picape</option>
-                <option>Sedã de luxo</option>
-              </select>
-            </div>
-            <div class="campo">
-              <label for="uso">Uso</label>
-              <select id="uso" name="uso">
-                <option value="">Qualquer</option>
-                <option>Serviço na fazenda</option>
-                <option>Uso próprio</option>
-              </select>
-            </div>
-            <div class="campo">
-              <label for="preco">Preço máximo</label>
-              <select id="preco" name="preco">
-                <option value="">Sem limite</option>
-                <option>R$ 200 mil</option>
-                <option>R$ 400 mil</option>
-                <option>R$ 800 mil</option>
-              </select>
-            </div>
-            <button class="botao" type="submit">Ver veículos</button>
-          </form>
-
-          <ul class="garantias">
-            <li>Fotos reais de cada veículo</li>
-            <li>Laudo cautelar incluso</li>
-            <li>Financiamento em até 60 vezes</li>
-          </ul>
         </div>
 
-        <!-- Imagem principal: coloque a foto em img/hero-sw4.jpg -->
-        <figure class="hero-imagem">
-          <img src="img/hero-sw4.jpg" alt="Toyota SW4 em uma estrada de terra de fazenda" width="1200" height="900">
-          <figcaption>Toyota SW4 SRX 2.8 Diesel, 2023</figcaption>
-        </figure>
+        <div class="veiculo-card">
+            <img src="img/FordMaverick.jpg" alt="Ford Maverick">
+            <div class="veiculo-info">
+                <h3>Ford Maverick</h3>
+                <p>Versatilidade para o trabalho e o dia a dia.</p>
+                <a href="#contato" class="btn-veiculo">Consultar veículo</a>
+            </div>
+        </div>
+
+        <div class="veiculo-card">
+            <img src="img/maybach.jpg" alt="Mercedes Maybach">
+            <div class="veiculo-info">
+                <h3>Mercedes-Maybach</h3>
+                <p>Luxo, conforto e exclusividade.</p>
+                <a href="#contato" class="btn-veiculo">Consultar veículo</a>
+            </div>
+        </div>
+
+        <div class="veiculo-card">
+            <img src="img/ram.jpg" alt="RAM">
+            <div class="veiculo-info">
+                <h3>RAM</h3>
+                <p>Força e robustez para qualquer desafio.</p>
+                <a href="#contato" class="btn-veiculo">Consultar veículo</a>
+            </div>
+        </div>
+
+        <div class="veiculo-card">
+            <img src="img/ram(2).jpg" alt="RAM modelo 2">
+            <div class="veiculo-info">
+                <h3>RAM — Modelo 2</h3>
+                <p>Potência e presença em qualquer terreno.</p>
+                <a href="#contato" class="btn-veiculo">Consultar veículo</a>
+            </div>
+        </div>
+
+        <div class="veiculo-card">
+            <img src="img/saveiro.jpg" alt="Volkswagen Saveiro">
+            <div class="veiculo-info">
+                <h3>Volkswagen Saveiro</h3>
+                <p>Praticidade e economia para o trabalho.</p>
+                <a href="#contato" class="btn-veiculo">Consultar veículo</a>
+            </div>
+        </div>
+
+        <div class="veiculo-card">
+            <img src="img/sw4.jpg" alt="Toyota SW4">
+            <div class="veiculo-info">
+                <h3>Toyota SW4</h3>
+                <p>Conforto, espaço e resistência.</p>
+                <a href="#contato" class="btn-veiculo">Consultar veículo</a>
+            </div>
+        </div>
+
+    </div>
+</section>
 
       </div>
     </section>
-
-    <!-- PARTE 2: seção de veículos em destaque (cards) entra aqui -->
-    <!-- PARTE 3: marcas e como comprar entram aqui -->
-
   </main>
 
   <!-- PARTE 3: rodapé (footer) entra aqui -->
+
+<footer class="rodape" id="contato">
+
+    <div class="rodape-conteudo">
+
+        <div class="rodape-marca">
+            <h2>Agro <span>Luxo</span></h2>
+            <p>
+                Veículos de alto padrão para quem busca
+                força, conforto e sofisticação.
+            </p>
+        </div>
+
+        <div class="rodape-informacoes">
+            <p>Atendimento em todo o Brasil</p>
+            <p>Segunda a sábado, das 8h às 18h</p>
+            <p>contato@agroluxo.com.br</p>
+        </div>
+
+        <div class="rodape-links">
+            <a href="#veiculos">Veículos</a>
+            <a href="#marcas">Marcas</a>
+            <a href="#como-comprar">Como comprar</a>
+            <a href="#contato">Contato</a>
+        </div>
+
+    </div>
+
+    <div class="rodape-final">
+        <p>© 2026 Agro Luxo Automóveis. Todos os direitos reservados.</p>
+    </div>
+
+</footer>
 
 </body>
 </html>

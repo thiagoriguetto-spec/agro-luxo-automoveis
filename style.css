@@ -1,0 +1,473 @@
+/* =========================================================
+   Agro Luxo Automóveis: style.css
+   PARTE 1: variáveis, base, cabeçalho e hero
+   ========================================================= */
+
+/* ============ VARIÁVEIS CSS ============
+   Declaradas em :root (valem para a página inteira) e usadas com var(--nome).
+   Para mudar a identidade do site, basta trocar os valores aqui. */
+:root {
+  --cor-grafite: #14171a;
+  --cor-aco: #1f2429;
+  --cor-linha: #343b42;
+  --cor-areia: #ece7dd;
+  --cor-nevoa: #a3acb4;
+  --cor-cobre: #c07a3e;
+  --cor-cobre-escuro: #9a5f2c;
+  --cor-texto: #f2efe9;
+
+  --fonte-titulo: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --fonte-texto: 'Source Sans 3', Arial, sans-serif;
+
+  --raio: 0.5rem;
+  --tempo: 0.3s;
+}
+
+/* ============ RESET E BASE ============
+   Zera margens e paddings do navegador.
+   border-box faz width e height já contarem o padding e a borda. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; /* 1rem = 16px, ou o tamanho que a pessoa escolheu no navegador */
+  scroll-behavior: smooth; /* rolagem suave ao clicar nos links do menu */
+}
+
+body {
+  background-color: var(--cor-grafite);
+  color: var(--cor-texto);
+  font-family: var(--fonte-texto);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  background-color: var(--cor-aco); /* cor que aparece enquanto a foto não carrega */
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Contorno visível para quem navega com o teclado (Tab) */
+:focus-visible {
+  outline: 3px solid var(--cor-cobre);
+  outline-offset: 3px;
+}
+
+/* Caixa central que limita a largura do conteúdo */
+.container {
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Link "Ir para o conteúdo": fica acima da tela e desce ao receber foco */
+.pular-conteudo {
+  position: absolute;
+  top: -4rem;
+  left: 1rem;
+  z-index: 20;
+  padding: 0.625rem 1.125rem;
+  border-radius: var(--raio);
+  background-color: var(--cor-texto);
+  color: var(--cor-grafite);
+  font-weight: 600;
+  transition: top var(--tempo) ease;
+}
+
+.pular-conteudo:focus {
+  top: 0.75rem;
+}
+
+/* ============ BOTÕES ============
+   .botao é o padrão (cobre). Variações: .botao-contorno e .botao-escuro.
+   A transition vai no estado normal, assim vale na ida e na volta do hover. */
+.botao {
+  display: inline-block;
+  padding: 0.8125rem 1.5rem;
+  border: 2px solid var(--cor-cobre);
+  border-radius: var(--raio);
+  background-color: var(--cor-cobre);
+  color: var(--cor-grafite);
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color var(--tempo) ease, color var(--tempo) ease, transform var(--tempo) ease;
+}
+
+.botao:hover {
+  background-color: var(--cor-texto);
+  border-color: var(--cor-texto);
+  transform: translateY(-2px);
+}
+
+.botao-contorno {
+  background-color: transparent;
+  color: var(--cor-texto);
+  padding: 0.5625rem 1.125rem;
+  font-size: 0.9375rem;
+}
+
+.botao-contorno:hover {
+  background-color: var(--cor-cobre);
+  border-color: var(--cor-cobre);
+  color: var(--cor-grafite);
+}
+
+/* ============ CABEÇALHO ============
+   sticky mantém o cabeçalho grudado no topo ao rolar a página. */
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(20, 23, 26, 0.94);
+  border-bottom: 1px solid var(--cor-linha);
+}
+
+/* Flexbox: logo à esquerda, menu no meio e botão à direita */
+.cabecalho-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+}
+
+.logo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.logo span {
+  color: var(--cor-cobre);
+}
+
+.menu ul {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.menu a {
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid transparent;
+  font-size: 0.9375rem;
+  transition: color var(--tempo) ease, border-color var(--tempo) ease;
+}
+
+.menu a:hover {
+  color: var(--cor-cobre);
+  border-bottom-color: var(--cor-cobre);
+}
+
+/* ============ HERO ============
+   Grid de 2 colunas: texto (um pouco maior) e foto. */
+.hero {
+  padding: 4rem 0 5rem;
+}
+
+.hero-grade {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+/* clamp(mínimo, ideal, máximo): o título cresce com a janela, mas dentro de um limite */
+.hero-texto h1 {
+  font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+  letter-spacing: -0.5px;
+  margin-bottom: 1.25rem;
+}
+
+.hero-descricao {
+  max-width: 34rem;
+  color: var(--cor-nevoa);
+  font-size: 1.1875rem;
+}
+
+/* Busca rápida: 3 campos e o botão lado a lado */
+.busca {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: var(--cor-aco);
+  border: 1px solid var(--cor-linha);
+  border-radius: var(--raio);
+}
+
+.campo {
+  flex: 1 1 8rem; /* cresce, encolhe e começa com 8rem de largura */
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.campo label {
+  font-size: 0.8125rem;
+  color: var(--cor-nevoa);
+}
+
+.campo select {
+  width: 100%;
+  padding: 0.6875rem 0.75rem;
+  border: 1px solid var(--cor-linha);
+  border-radius: var(--raio);
+  background-color: var(--cor-grafite);
+  color: var(--cor-texto);
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+}
+
+/* Lista de garantias abaixo da busca */
+.garantias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-top: 1.5rem;
+  font-size: 0.9375rem;
+  color: var(--cor-nevoa);
+}
+
+.garantias li {
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+/* Marcador feito com CSS: pseudo-elemento ::before, sem precisar de imagem */
+.garantias li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--cor-cobre);
+}
+
+/* Foto principal. aspect-ratio mantém a proporção; object-fit: cover preenche sem distorcer. */
+.hero-imagem {
+  position: relative;
+}
+
+.hero-imagem img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--raio);
+  border: 1px solid var(--cor-linha);
+}
+
+.hero-imagem figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--cor-nevoa);
+}
+
+/* ============ TELAS MENORES (básico; o ajuste completo vem na Parte 4) ============ */
+@media (max-width: 60em) {
+  .hero-grade {
+    grid-template-columns: 1fr;
+  }
+}
+
+.secao-veiculos {
+    padding: 70px 8%;
+    background-color: #1f2429;
+}
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-secao h2 {
+    color: #ece7dd;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.titulo-secao p {
+    color: #a3acb4;
+}
+
+.veiculos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.veiculo-card {
+    background-color: #14171a;
+    border: 1px solid #343b42;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.veiculo-card:hover {
+    transform: translateY(-5px);
+    border-color: #c07a3e;
+}
+
+.veiculo-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.veiculo-info {
+    padding: 20px;
+}
+
+.veiculo-info h3 {
+    color: #ece7dd;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.veiculo-info p {
+    color: #a3acb4;
+    margin-bottom: 20px;
+}
+
+.btn-veiculo {
+    display: inline-block;
+    background-color: #c07a3e;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-veiculo:hover {
+    background-color: #9a5f2c;
+}
+
+@media (max-width: 900px) {
+    .veiculos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .veiculos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* RODAPÉ */
+
+.rodape {
+    background-image:
+        linear-gradient(rgba(10, 12, 14, 0.65), rgba(10, 12, 14, 0.85)),
+        url("img/ram.jpg");
+
+    background-size: cover;
+    background-position: center;
+    color: #f2efe9;
+}
+
+.rodape-conteudo {
+    min-height: 350px;
+    padding: 65px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 200px;
+    align-items: start;
+    gap: 40px;
+}
+
+.rodape-marca h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.rodape-marca h2 span {
+    color: #c07a3e;
+}
+
+.rodape-marca p {
+    max-width: 350px;
+    line-height: 1.7;
+    color: #ece7dd;
+}
+
+.rodape-informacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-top: 10px;
+}
+
+.rodape-informacoes p {
+    color: #ece7dd;
+}
+
+.rodape-links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.rodape-links a {
+    color: #ece7dd;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.rodape-links a:hover {
+    color: #c07a3e;
+}
+
+.rodape-final {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding: 25px;
+    text-align: center;
+    background-color: rgba(10, 12, 14, 0.85);
+}
+
+.rodape-final p {
+    color: #ece7dd;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+    .rodape-conteudo {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
